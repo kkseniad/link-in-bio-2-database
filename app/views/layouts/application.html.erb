@@ -20,9 +20,127 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+
+    <style>
+      /* *{ 
+        border: 1px red dashed;
+      }*/
+
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: linear-gradient(165deg, #ffc7c7, #e3aabb, #c590ae, #a6779f, #86608e, #654b7b, #433768, #1a2656);
+        color: rgba(255, 255, 255, 1.0);
+        font-family: "Noto Sans Mono";
+        font-size: 20px;
+      }
+
+      a {
+        color: rgba(255, 255, 255, 1.0);
+        text-decoration: none;
+      }
+
+      .avatar {
+        width: 128px;
+        height: 128px;
+        object-fit: cover;
+        border-radius: 128px;
+      }
+
+      .thumbnail {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 48px;
+      }
+
+      .main-container {
+        max-width: 640px;
+        margin: auto;
+      }
+
+      .image {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .name {
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 28px;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        font-size: 15px;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        background-color: rgba(170, 227, 210, 0.5); /* each item gets its own background */
+        border-radius: 1000px;
+        padding: 5px 15px;
+        box-shadow: 4px 4px 10px 0px rgba(176,172,230,1);
+      }     
+
+      .link-text {
+        text-align: center;
+        flex-grow: 1;
+      }
+
+    </style>
+    
   </head>
 
   <body>
-    <%= yield %>
+     <div class="main-container">
+
+      <div class="image">
+        <img class="avatar" src="/coffee.jpg" alt="coffee mug">
+      </div>
+
+      <div class="name">
+        Kseniia Kormalova
+      </div>
+
+      <div class="icons">
+
+        <a href="https://github.com/kkseniad" target="_blank">
+          <i class="fa-brands fa-github"></i>GitHub
+        </a>
+
+        <a href="https://www.instagram.com/ksenya.kor/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>Instagram
+        </a>
+
+        <a href="https://www.linkedin.com/in/kseniia-kormalova" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>LinkedIn
+        </a>
+
+      </div>
+
+      <%= yield %>
+
   </body>
 </html>
